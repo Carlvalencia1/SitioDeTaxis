@@ -3,22 +3,26 @@ package models;
 import java.util.ArrayList;
 
 public class Unidades {
-    private String marca ;
+    private String marca;
     private String color;
     private String modelo;
     private int año;
     private int id;
-    private ArrayList<Unidades> unidades = new  ArrayList<>();
+    private ArrayList<Unidades> unidades = new ArrayList<>();
 
-
-    public Unidades(String marca, String color, String modelo, int año, int id) {
+    public Unidades(String marca, String modelo, String color, int año, int id) {
         this.marca = marca;
-        this.color = color;
         this.modelo = modelo;
+        this.color = color;
         this.año = año;
         this.id = id;
     }
-    public void addUnidades(Unidades unit){
+
+    public Unidades() {
+
+    }
+
+    public void addUnidades(Unidades unit) {
         unidades.add(unit);
     }
 
@@ -26,15 +30,23 @@ public class Unidades {
         return unidades;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Unidades{" +
                 "marca='" + marca + '\'' +
-                ", color='" + color + '\'' +
                 ", modelo='" + modelo + '\'' +
+                ", color='" + color + '\'' +
                 ", año=" + año +
                 ", id=" + id +
                 ", unidades=" + unidades +
                 '}';
+    }
+
+    public Unidades getUnidadPorId(int idUnidad) {
+        return null;
     }
 }

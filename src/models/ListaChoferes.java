@@ -1,18 +1,24 @@
 package models;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class ListaChoferes {
-    private LocalDate diaTrabajo;
-    private LocalTime horaTrabajo;
-    private ArrayList<Chofer> listaChoferes = new ArrayList<Chofer>();
-    public void addChoferes(Chofer chofer){
+    private ArrayList<Chofer> listaChoferes = new ArrayList<>();
+
+    public void addChoferes(Chofer chofer) {
         listaChoferes.add(chofer);
     }
+
     public ArrayList<Chofer> getChoferes() {
         return listaChoferes;
     }
-}
 
+    public Chofer getChoferPorId(int id) {
+        for (Chofer chofer : listaChoferes) {
+            if (chofer.getId() == id) {
+                return chofer;
+            }
+        }
+        return null;
+    }
+}
